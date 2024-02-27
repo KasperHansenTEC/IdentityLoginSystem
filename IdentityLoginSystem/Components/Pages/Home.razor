@@ -1,0 +1,34 @@
+﻿@page "/"
+
+@attribute [Microsoft.AspNetCore.Authorization.Authorize(Policy = "AuthenticatedUser")]
+
+<PageTitle>Home</PageTitle>
+
+<h1>@_output</h1>
+
+<AuthorizeView>
+    Welcome to your new app @context.User.Identity?.Name!
+    pls enter your CPR number below:
+
+</AuthorizeView>
+
+
+
+
+
+@code {
+    private string? _output;
+    protected override void OnInitialized()
+    {
+        _output = "Hva sker der shabab?";
+    }
+
+   
+
+    
+
+}
+
+
+
+
